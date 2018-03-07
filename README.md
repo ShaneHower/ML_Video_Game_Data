@@ -25,4 +25,5 @@ I used a Random Forest Classifier to determine the Gini Importance of each featu
 The full feature accuracy test resulted in a value of 0.3739 while the selected feature accuracy test resulted in a value of 0.3146.
 ## Visualizing the Data
 I constructed a scatter plot to visualize the relationship between the Selected features.  The graph reflects the fact that our accuracy rating is low. 
+
 ![y_vs_p_id](https://user-images.githubusercontent.com/34482822/37116984-d7928780-221d-11e8-82ef-35f1c16dd11e.png)
