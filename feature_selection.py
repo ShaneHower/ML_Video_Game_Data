@@ -9,19 +9,16 @@ from sklearn.metrics import accuracy_score
 df1 = pd.read_csv('/Users/shanehower/Desktop/vg_data/publisher_id.csv')
 df2 = pd.read_csv('/Users/shanehower/Desktop/vg_data/only_numbered_columns.csv')
 
+#had to convert a few variable types to float
 def conv_float(x,y):
     x[y] = x[y].astype('float64')
     return x[y]
 
-conv_float(df1,'Critic_Score')
-conv_float(df2,'Critic_Score')
-conv_float(df1,'Critic_Count')
-conv_float(df2, 'Critic_Count')
-conv_float(df1, 'User_Count')
-conv_float(df2, 'User_Count')
-conv_float(df1, 'User_Score')
-conv_float(df2, 'User_Score')
+for i in ['Critic_Score', 'Critic_Count', 'User_Score', 'User_Count']:
+    conv_float(df1,i)
+    conv_float(df2, i)
 
+# list of features
 feature_labels = list(df2.columns.values)
 
 #changing the list to a numpy array which can be used for color in matplotlib. This is the y which is our 12 genres.
