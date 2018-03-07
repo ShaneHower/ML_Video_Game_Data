@@ -28,5 +28,5 @@ def plot_scatter(col1, col2):
     plt.tight_layout()
     plt.show()
 
-plot_scatter('publisher_ID', 'year')
+plot_scatter('year', 'publisher_ID')
 
