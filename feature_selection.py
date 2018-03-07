@@ -44,23 +44,23 @@ clf.fit(X_train,y_train)
 for feature in zip(feature_labels, clf.feature_importances_):
     print(feature)
 
-#Select features that are over 0.15 in importance from clf
+#Select features that are over 0.12 in importance from clf
 sfm = SelectFromModel(clf, threshold= 0.12)
 
 #Train the Selector
 sfm.fit(X_train,y_train)
 
-#print the features with an importance over 0.15
+#print the features with an importance over 0.12
 for feature_list_index in sfm.get_support(indices=True):
     print(feature_labels[feature_list_index])
 
-#Transform the data to create a new dataset containing only important features
-#NOTE: must do this for the train AND the test
+# Transform the data to create a new dataset containing only important features
+# must do this for the train AND the test
 
 X_important_train = sfm.transform(X_train)
 X_important_test = sfm.transform(X_test)
 
-#Need a new random forest to fit our new sets that contain only the important features
+# Need a new random forest to fit our new sets that contain only the important features
 clf_important = RandomForestClassifier(n_estimators=10000, random_state=0, n_jobs=-1)
 
 #Train the classifier on important feature data
