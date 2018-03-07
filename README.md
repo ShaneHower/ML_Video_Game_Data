@@ -26,4 +26,5 @@ The full feature accuracy test resulted in a value of 0.3739 while the selected 
 ## Visualizing the Data
 I constructed a scatter plot to visualize the relationship between the Selected features.  The graph reflects the fact that our accuracy rating is low. 
 
-![y_vs_p_id](https://user-images.githubusercontent.com/34482822/37116984-d7928780-221d-11e8-82ef-35f1c16dd11e.png)
+![figure_1](https://user-images.githubusercontent.com/34482822/37117807-44f3901a-2220-11e8-8a1a-1a2b99742f4d.png)
+
