@@ -1,10 +1,41 @@
+
+--- Data set 1 that has all unaltered rows along with a new row which is genre_id.
+--- genre_id will be our y
 SELECT a.*, b.genre_id
 FROM video_game a LEFT JOIN (
 			      SELECT genre, @rownum:=@rownum + 1 AS genre_id
 			      FROM(
 				    SELECT DISTINCT Genre 
 				    FROM  video_game
-				  ) a,
-			      (SELECT @rownum:= 0) r
-			     ) b 
+				  ) a, (SELECT @rownum:= 0) r) b 
 ON a.genre = b.genre;
+
+
+--- Data set 2 which is all numbered values.  This required the creation of publisher_ID and Platform_ID as well as an experimental row 
+--- that assigned a binary value based on if the words 'Dragon', 'Fantasy', or 'Quest' showed up in the title (Was created to guess if
+--- a title was an RPG).  This column was called Title_RPG.
+
+SELECT a.year, a.NA_Sales, a.EU_Sales, a.JP_Sales,
+a.Other_Sales, a.Global_Sales, a.Critic_Score, a.Critic_Count,
+a.User_Score, a.User_Count, b.publisher_ID, c.platform_ID, 
+			 CASE WHEN name LIKE('%Dragon%') 
+					OR name LIKE('%Quest%') 
+                    			OR name LIKE('%Fantasy%')
+				  	THEN 1
+                  			ELSE 0 
+                  			END AS Title_RPG
+FROM video_game a LEFT JOIN (
+				SELECT publisher, @rownum:=@rownum + 1 AS publisher_id
+				FROM(
+					SELECT DISTINCT publisher
+					FROM  video_game
+				     ) a, (SELECT @rownum:= 0) r) b 
+ON a.publisher = b.publisher
+LEFT JOIN (
+		SELECT platform, @rownum:=@rownum + 1 AS platform_id
+		FROM(
+			SELECT DISTINCT platform
+			FROM  video_game
+		     ) a, (SELECT @rownum:= 0) r) c 
+ON c.platform = a.Platform;
+ 
