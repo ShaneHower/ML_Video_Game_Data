@@ -1,6 +1,6 @@
 # ML_Video_Game_Data
 NOTE: this project is still being worked on. 
-This project attempts to construct a model which will predict what genre a video game is based on features such as the developer, sales and year it was released. 
+This project attempts to construct a model which will predict the genre of a game based on important features (such as the developer, sales and year of release). 
 
 ## Query the Data With SQL 
 I needed two data sets.  The first data set assigned a number value for each genre.  This would be my y value, the value which will be the target array.  The second set was a set of selected features.  If these features were strings they were then converted into numerical ID's.  Columns were added to experiment with new features such as assigning a binary value to titles with names like "Quest", "Fantasy", or "Dragon". This feature would suggest that such a title would be an RPG.
