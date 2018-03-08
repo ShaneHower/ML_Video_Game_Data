@@ -23,8 +23,5 @@ I used a Random Forest Classifier to determine the Gini Importance of each featu
 ('Title_RPG', 0.0078073117288951334)
 ```
 The full feature accuracy test resulted in a value of 0.3739 while the selected feature accuracy test resulted in a value of 0.3146.
-## Visualizing the Data
-I constructed a scatter plot to visualize the relationship between the Selected features.  The graph reflects the fact that our accuracy rating is low. 
 
-![figure_1](https://user-images.githubusercontent.com/34482822/37117807-44f3901a-2220-11e8-8a1a-1a2b99742f4d.png)
 
