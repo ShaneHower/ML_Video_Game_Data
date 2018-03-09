@@ -1,4 +1,8 @@
 
+-- first had to clean up the names column of the data 
+UPDATE video_game
+SET name = SUBSTRING_INDEX(name,'(', 1);
+
 --- Data set 1 that has all unaltered rows along with a new row which is genre_id.
 --- genre_id will be our y
 SELECT a.*, b.genre_id
