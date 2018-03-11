@@ -28,7 +28,7 @@ X = array(df2)
 #split into training and test sets
 X_train, X_test,y_train, y_test = train_test_split(X,y, test_size=0.4, random_state=0)
 
-# create a random forest classifier not sure what all these hyper parameters do
+# create a random forest classifier
 # n_estimators is how many trees n_jobs is the # of jobs to run in parallel for both
 # fit and predeictm if -1 the number of jobs is set to the number of cores
 clf = RandomForestClassifier(n_estimators=10000, random_state=0, n_jobs= -1)
