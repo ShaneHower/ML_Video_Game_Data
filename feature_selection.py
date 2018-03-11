@@ -15,7 +15,6 @@ def conv_float(x,y):
     return x[y]
 
 for i in ['Critic_Score', 'Critic_Count', 'User_Score', 'User_Count']:
-    conv_float(df1,i)
     conv_float(df2, i)
 
 # list of features
