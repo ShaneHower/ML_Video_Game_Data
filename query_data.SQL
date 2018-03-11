@@ -3,8 +3,22 @@
 UPDATE video_game
 SET name = SUBSTRING_INDEX(name,'(', 1);
 
---- Data set 1 that has all unaltered rows along with a new row which is genre_id.
---- genre_id will be our y
+UPDATE video_game_data
+SET Name = REPLACE(Name, '+', 'plus');
+
+UPDATE video_game_data
+SET Name = REPLACE(Name, '[', '');
+
+UPDATE video_game_data
+SET Name = REPLACE(Name, ']', '');
+
+UPDATE video_game_data
+SET NAME = REPLACE(Name, '*', '');
+
+UPDATE video_game_data
+SET Name = REPLACE(Name, '?', '');
+
+--- Data set 1 that is the original data set with a new row added which assigns an ID for each genre.
 SELECT a.*, b.genre_id
 FROM video_game a LEFT JOIN (
 			      SELECT genre, @rownum:=@rownum + 1 AS genre_id
