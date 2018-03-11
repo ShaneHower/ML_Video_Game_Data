@@ -6,8 +6,8 @@ from sklearn.feature_selection import SelectFromModel
 from sklearn.metrics import accuracy_score
 
 
-df1 = pd.read_csv('/Users/shanehower/Desktop/vg_data/publisher_id.csv')
-df2 = pd.read_csv('/Users/shanehower/Desktop/vg_data/only_numbered_columns.csv')
+df1 = pd.read_csv('*Desired Target Data*')
+df2 = pd.read_csv('*Desired Data Frame containing the features*')
 
 #had to convert a few variable types to float
 def conv_float(x,y):
