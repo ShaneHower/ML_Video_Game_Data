@@ -44,5 +44,19 @@ To try and increase the accuracy score for this prediction model I decided to ex
 After running through the python script I would end up with a new data set:
 ![after name split](https://user-images.githubusercontent.com/34482822/37256629-d3abf0a2-2533-11e8-9b50-02443bef3c07.png)
 
-Unfortunately, this made the prediction even less accurate.  There was not a Gini importance score higher than 0.1.    
+Unfortunately, this made the prediction even less accurate.  There was not a Gini importance score higher than 0.1. As you could guess, this also created a tremendous amount of features.  These were a few of Gini importance scores.
+```
+('Wii', 0.0002298817063839135)
+('Sports', 0.00048535764702372362)
+('Super', 0.0014892024887904979)
+('Mario', 0.00039889619846502104)
+('Bros.', 0.00011786916624944699)
+('Kart', 0.00022619694561400733)
+('Resort', 0.00010219451420683444)
+('Pokemon', 0.00016330194273440419)
+('Red/Pokemon', 4.1832118225979434e-06)
+('Blue', 0.00029074344591355406)
+('Tetris', 0.00018446474938745266)
+('New', 0.00040730233964280922)
+```
 
