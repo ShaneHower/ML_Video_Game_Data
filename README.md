@@ -37,4 +37,12 @@ I used a Random Forest Classifier to determine the Gini Importance of each featu
 ```
 The full feature accuracy test resulted in a value of 0.3739 while the selected feature accuracy test resulted in a value of 0.3146.
 
+## Experimenting to Increase Accuracy
+To try and increase the accuracy score for this prediction model I decided to experiment and see if the names could give any indication as to what a game's genre is.  The way I approached this problem was to create a list of unique names and check if a title contained any of those names.  It would then create a new column and assign that entry 'True' if that word was in the title or 'False' otherwise.  so for instance, let's say I have this data set:  
+![before name split](https://user-images.githubusercontent.com/34482822/37256623-bfc2b13e-2533-11e8-8206-c215156ed72c.png)
+
+After running through the python script I would end up with a new data set:
+![after name split](https://user-images.githubusercontent.com/34482822/37256629-d3abf0a2-2533-11e8-9b50-02443bef3c07.png)
+
+Unfortunately, this made the prediction even less accurate.  There was not a Gini importance score higher than 0.1.    
 
