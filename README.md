@@ -38,13 +38,13 @@ I used a Random Forest Classifier to determine the Gini Importance of each featu
 The full feature accuracy test resulted in a value of 0.3739 while the selected feature accuracy test resulted in a value of 0.3146.
 
 ## Experimenting to Increase Accuracy
-To try and increase the accuracy score for this prediction model I decided to experiment and see if the names could give any indication as to what a game's genre is.  The way I approached this problem was to create a list of unique names and check if a title contained any of those names.  It would then create a new column and assign that entry 'True' if that word was in the title or 'False' otherwise.  so for instance, let's say I have this data set:  
+To try and increase the accuracy score for this prediction model I decided to experiment and see if the names could increase the prediction accuracy.  The way I approached this problem was to create a list of unique names and check if a title contained any of those names.  It would then create a new column and assign that entry 'True' if that word was in the title or 'False' otherwise.  so for instance, let's say I have this data set:  
 ![before name split](https://user-images.githubusercontent.com/34482822/37256623-bfc2b13e-2533-11e8-8206-c215156ed72c.png)
 
 After running through the python script I would end up with a new data set:
 ![after name split](https://user-images.githubusercontent.com/34482822/37256629-d3abf0a2-2533-11e8-9b50-02443bef3c07.png)
 
-Unfortunately, this made the prediction even less accurate.  There was not a Gini importance score higher than 0.1. As you could guess, this also created a tremendous amount of features.  These were a few of Gini importance scores.
+Unfortunately, this made the prediction even less accurate.  There was not a Gini importance score higher than 0.1. As you could guess, this also created a tremendous amount of features (11,047).  These were a few of Gini importance scores.  The most important still being JP_Sales and Publisher_ID.
 ```
 ('Wii', 0.0002298817063839135)
 ('Sports', 0.00048535764702372362)
@@ -59,6 +59,14 @@ Unfortunately, this made the prediction even less accurate.  There was not a Gin
 ('Tetris', 0.00018446474938745266)
 ('New', 0.00040730233964280922)
 ```
+Precision and Recall are listed below along with the precision recall curve.
+```
+precision: 0.5327868852459017
+recall: 0.11149228130360206
+Average precision-recall score: 0.14
+```
+![figure_1](https://user-images.githubusercontent.com/34482822/37305761-f0f693c8-260b-11e8-97b4-376e8aa8aac9.png)
+
 ## Multi Label attempt
 Above was a single label multi class attempt (Genre was the label, the classes were the 12 different genre names).  I then tried a multi label binary class strategy as a final attempt to increase the accuracy of the prediction.  In order to do this I had to create a new column representing the name of each genre and assign a binary value (True or False) for each game.  Here is an example data set that will demonstrate how this works.  The original data frame will look like this:   
 
