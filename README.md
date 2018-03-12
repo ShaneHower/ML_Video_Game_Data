@@ -39,12 +39,14 @@ The full feature accuracy test and selected feature accuracy test resulted in a 
 p_score = precision_score(y_test, y_important_pred)
 r_score = recall_score(y_test, y_important_pred)
 ```
-The reason precision and recall are better metrics to determine the usefulness of a model is because accuracy returns a value of all predictions over all possible values (TP + FP)/ (TP + FP + TN + FN).  This means that, if only a small percentage of our data is in the RPG genre, our accuracy will be higher because we will likely be guessing that a game is not an RPG most of the time.  High precision means most of our guesses were right while high recall means that out of all the RPGs we predicted most of them.  Unfortunately, this is not what our scores show.  Below is a visual aid showing the precision-recall curve: 
+Our precision score was 53%, which means 53% of our predictions were predicted true and were actually true. Our Recall was 26%, which means out of all the games that were RPGs, we predicted that 26% of them were in the RPG genre while predicting 74% were not.  Both of these are low values which means that, even though our accuracy is high, this model does not make very good predictions.  
+
+The reason precision and recall are better metrics to determine the usefulness of a model is because accuracy returns a value of all predictions over all possible values (TP + FP)/ (TP + FP + TN + FN).  This means that, if only a small percentage of our data is in the RPG genre, our accuracy will be higher because we will likely be guessing that a game is not an RPG most of the time.  High precision means most of our guesses were right while high recall means that out of all the RPGs we predicted most of them correctly.  Unfortunately, this is not what our scores show.  Below is a visual aid showing the precision-recall curve: 
 
 ![figure_1](https://user-images.githubusercontent.com/34482822/37307147-58aa713e-2610-11e8-90ab-89fd88181bdd.png)
 
-## Experimenting to Increase Accuracy
-To try and increase the accuracy score for this prediction model I decided to experiment and see if the names could increase the prediction accuracy.  The way I approached this problem was to create a list of unique names and check if a title contained any of those names.  It would then create a new column and assign that entry 'True' if that word was in the title or 'False' otherwise.  so for instance, let's say I have this data set:  
+## Experimenting Precision/Recall
+To try and increase the Precision/ Recall score for this prediction model I decided to experiment and see if the names could help our prediction.  The way I approached this problem was to create a list of unique names and check if a title contained any of those names.  It would then create a new column and assign that entry 'True' if that word was in the title or 'False' otherwise.  so for instance, let's say I have this data set:  
 ![before name split](https://user-images.githubusercontent.com/34482822/37256623-bfc2b13e-2533-11e8-8206-c215156ed72c.png)
 
 After running through the python script I would end up with a new data set:
@@ -74,4 +76,4 @@ Average precision-recall score: 0.14
 ![figure_1](https://user-images.githubusercontent.com/34482822/37305761-f0f693c8-260b-11e8-97b4-376e8aa8aac9.png)
 
 ## Conclusion 
-After trying a few different strategies to increase the prediction capabilities of this model we still had very low Precision and Recall scores.  This leades us to believe that our data does not have relevant features to make this kind of predictions.  We need new features prehaps covering ground such as average age or gender of consumers, length of games, multiplayer capabilities, etc
+After trying a few different strategies to increase the prediction capabilities of this model we still had very low Precision and Recall scores.  This leades us to believe that our data does not have relevant features to make this kind of predictions.  We need new features prehaps covering ground such as average age or gender of consumers, length of games, multiplayer capabilities, etc.
