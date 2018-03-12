@@ -19,19 +19,52 @@ UPDATE video_game_data
 SET Name = REPLACE(Name, '?', '');
 
 --- Data set 1 that is the original data set with a new row added which assigns an ID for each genre.
-SELECT a.*, b.genre_id
-FROM video_game a LEFT JOIN (
-			      SELECT genre, @rownum:=@rownum + 1 AS genre_id
-			      FROM(
-				    SELECT DISTINCT Genre 
-				    FROM  video_game
-				  ) a, (SELECT @rownum:= 0) r) b 
-ON a.genre = b.genre;
+SELECT   
+CASE When Genre = 'Platform' Then 1
+     ELSE 0 
+     END AS Is_Platform,
+CASE WHEN Genre = 'Sports' Then 1
+	 ELSE 0
+     END AS Is_Sports,
+CASE WHEN Genre = 'Racing' Then 1
+	 ELSE 0 
+     END AS Is_Racing,
+CASE WHEN Genre = 'Role-Playing' THEN 1 
+	 ELSE 0 
+     END AS Is_RPG,
+CASE WHEN Genre = 'Puzzle' THEN 1
+	 ELSE 0
+     END AS Is_Puzzle,
+CASE WHEN Genre = 'Misc' THEN 1 
+	 ELSE 0 
+     END AS Is_Misc,
+CASE WHEN Genre = 'Shooter' THEN 1
+	 ELSE 0 
+     END AS Is_Shooter,
+CASE WHEN Genre = 'Simulation' THEN 1
+	 ELSE 0 
+     END AS Is_Sim,
+CASE WHEN Genre = 'Action' THEN 1
+	 ELSE 0 
+     END AS Is_Action,
+CASE WHEN Genre = 'Fighting' THEN 1
+	 ELSE 0 
+     END AS Is_Fighting,
+CASE WHEN Genre = 'Adventure' THEN 1
+	 ELSE 0
+     END AS Is_Adventure,
+CASE WHEN Genre = 'Strategy' THEN 1
+	 ELSE 0
+     END AS Is_Strategy   
+FROM video_game_data;
 
 
---- Data set 2 which is all numbered values.  This required the creation of publisher_ID and Platform_ID as well as an experimental row 
---- that assigned a binary value based on if the words 'Dragon', 'Fantasy', or 'Quest' showed up in the title (Was created to guess if
---- a title was an RPG).  This column was called Title_RPG.
+/* 
+   Data set 2 which is all numbered values.  This required the creation of publisher_ID and Platform_ID as well as an experimental row 
+   that assigned a binary value based on if the words 'Dragon', 'Fantasy', or 'Quest' showed up in the title (Was created to guess if
+   a title was an RPG).  This column was called Title_RPG.  MYSQL doesn't have the rownum clause so this had to be done with the JOIN 
+   clause instead.
+*/
 
 SELECT a.year, a.NA_Sales, a.EU_Sales, a.JP_Sales,
 a.Other_Sales, a.Global_Sales, a.Critic_Score, a.Critic_Count,
