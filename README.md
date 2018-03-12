@@ -1,6 +1,5 @@
-# ML_Video_Game_Data
-NOTE: this project is still being worked on. 
-This project attempts to construct a model which will predict the genre of a game based on important features (such as the developer, sales and year of release). 
+# ML_Video_Game_Data 
+This project attempts to construct a model which will predict if a game belongs to the RPG genre based on important features (such as the developer, sales and year of release). 
 
 ## Query the Data With SQL 
 
@@ -16,7 +15,7 @@ This was done with SUBSTRING_INDEX.  It deleted all text to the right of the fir
 UPDATE video_game
 SET name = SUBSTRING_INDEX(name,'(', 1);
 ```
-I needed two data sets.  The first data set assigned a number value for each genre.  This would be my y value, the value which will be the target array.  The second set was a set of selected features.  If these features were strings they were then converted into numerical ID's.  Columns were added to experiment with new features such as assigning a binary value to titles with names like "Quest", "Fantasy", or "Dragon". This feature would suggest that such a title would be an RPG.
+I needed two data sets.  The first data set gave a binary value to each row which indicated if a game was an RPG (1) or not (0).  This would be my y value, the value which will be the target array.  The second set was a set of selected features.  If these features were strings they were then converted into numerical ID's.  Columns were added to experiment with new features such as assigning a binary value to titles with names like "Quest", "Fantasy", or "Dragon". This feature would suggest that such a title would be an RPG.
 
 ## Feature Selection
 I used a Random Forest Classifier to determine the Gini Importance of each feature and then tested the prediction accuracy of the most important features.  The highest scored features were 'JP_Sales' and 'publisher_ID'.  
