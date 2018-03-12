@@ -72,7 +72,7 @@ Our accuracy stayed at 92% for our selected features, however, there was not a G
 
 Our precision remained the same at 53%, but our recall had a significant decrease at 11%.  So this experiment did not really help our predictions.  Below is the Precision-Recall curve for this data set.
 
-![figure_1](https://user-images.githubusercontent.com/34482822/37305761-f0f693c8-260b-11e8-97b4-376e8aa8aac9.png)
+![figure_1](https://user-images.githubusercontent.com/34482822/37310459-56cd2cf8-261a-11e8-94b3-b1eb537e1dec.png)
 
 ## Conclusion 
 After trying a few different strategies to increase the prediction capabilities of this model we still had very low Precision and Recall scores.  This leads us to believe that our data does not have relevant features to make this kind of predictions.  We need new features prehaps covering ground such as average age or gender of consumers, length of games, multiplayer capabilities, etc.
