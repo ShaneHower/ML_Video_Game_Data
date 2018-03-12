@@ -18,7 +18,8 @@ SET NAME = REPLACE(Name, '*', '');
 UPDATE video_game_data
 SET Name = REPLACE(Name, '?', '');
 
---- Data set 1 that is the original data set with a new row added which assigns an ID for each genre.
+-- Data set 1 that is the original data set with a new row added which assigns an ID for each genre. All of the Genre's were 
+-- made converted into binary columns however, our project just works with the column "Is_RPG"
 SELECT   
 CASE When Genre = 'Platform' Then 1
      ELSE 0 
