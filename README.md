@@ -52,27 +52,25 @@ To try and increase the Precision/ Recall score for this prediction model I deci
 After running through the python script I would end up with a new data set:
 ![after name split](https://user-images.githubusercontent.com/34482822/37256629-d3abf0a2-2533-11e8-9b50-02443bef3c07.png)
 
-Unfortunately, this made the prediction even less accurate.  There was not a Gini importance score higher than 0.1. As you could guess, this also created a tremendous amount of features (11,047).  These were a few of Gini importance scores.  The most important still being JP_Sales and Publisher_ID.
+Our accuracy stayed at 92% for our selected features, however, there was not a Gini importance score higher than 0.01. As you could guess, this also created a tremendous amount of features (11,047).  These were a few of Gini importance scores.  The most important still being JP_Sales and Publisher_ID.
 ```
-('Wii', 0.0002298817063839135)
-('Sports', 0.00048535764702372362)
-('Super', 0.0014892024887904979)
-('Mario', 0.00039889619846502104)
-('Bros.', 0.00011786916624944699)
-('Kart', 0.00022619694561400733)
-('Resort', 0.00010219451420683444)
-('Pokemon', 0.00016330194273440419)
-('Red/Pokemon', 4.1832118225979434e-06)
-('Blue', 0.00029074344591355406)
-('Tetris', 0.00018446474938745266)
-('New', 0.00040730233964280922)
+('JP_Sales', 0.029354910983696695)
+('Other_Sales', 0.0096580896133686093)
+('Global_Sales', 0.017380643803780377)
+('Critic_Score', 0.0093791033194381875)
+('Critic_Count', 0.010917642625512645)
+('User_Score', 0.01060711768162452)
+('User_Count', 0.013643938172559019)
+('publisher_ID', 0.017511158250049563)
+('platform_ID', 0.012177256447408843)
+('Title_RPG', 0.0091095749319983418)
+('Name', 4.9212610831392626e-07)
+('Wii', 1.2394600815783068e-05)
+('Sports', 2.7979981601987282e-05)
+('Super', 0.00042687922637673319)
 ```
-Precision and Recall are listed below along with the precision recall curve.
-```
-precision: 0.5327868852459017
-recall: 0.11149228130360206
-Average precision-recall score: 0.14
-```
+Our precision remained the same at 53%, but our recall had a siginificant decrease at 11%.  So this experiment did not really help our predictions.  Below is the Precision-Recall curve for this data set.
+
 ![figure_1](https://user-images.githubusercontent.com/34482822/37305761-f0f693c8-260b-11e8-97b4-376e8aa8aac9.png)
 
 ## Conclusion 
