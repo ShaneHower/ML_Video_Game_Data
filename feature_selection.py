@@ -4,7 +4,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.feature_selection import SelectFromModel
 from sklearn.metrics import accuracy_score
-
+from sklearn.metrics import average_precision_score,precision_recall_curve, precision_score, recall_score
 
 df1 = pd.read_csv('*Desired Target Data*')
 df2 = pd.read_csv('*Desired Data Frame containing the features*')
@@ -71,3 +71,24 @@ print(accuracy_score(y_test, y_pred))
 y_important_pred = clf_important.predict(X_important_test)
 
 print(accuracy_score(y_test, y_important_pred))
+
+
+#Precision and Recall
+p_score = precision_score(y_test, y_important_pred)
+r_score = recall_score(y_test, y_important_pred)
+average_precision = average_precision_score(y_test, y_important_pred)
+print("precision: {0}".format(p_score))
+print("recall: {0}".format(r_score))
+print('Average precision-recall score: {0:0.2f}'.format(average_precision))
+
+precision, recall, _ = precision_recall_curve(y_test, y_pred)
+
+plt.step(recall, precision, color = 'b', alpha = 0.2, where='post')
+plt.fill_between(recall, precision, step='post', alpha=0.2, color='b')
+
+plt.xlabel('Recall')
+plt.ylabel('Precision')
+plt.xlim([0.0,1.05])
+plt.ylim([0.0,1.0])
+plt.title('Precision-recall curve: AP = {0:0.2f}'.format(average_precision))
+plt.show()
