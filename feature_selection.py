@@ -21,7 +21,7 @@ for i in ['Critic_Score', 'Critic_Count', 'User_Score', 'User_Count']:
 feature_labels = list(df2.columns.values)
 
 #changing the list to a numpy array which can be used for color in matplotlib. This is the y which is our 12 genres.
-y = array(list(df1['Genre_Code']))
+y = array(list(df1['Is_RPG']))
 #This is a 13-D feature set
 X = array(df2)
 
