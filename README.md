@@ -73,3 +73,5 @@ Average precision-recall score: 0.14
 ```
 ![figure_1](https://user-images.githubusercontent.com/34482822/37305761-f0f693c8-260b-11e8-97b4-376e8aa8aac9.png)
 
+## Conclusion 
+After trying a few different strategies to increase the prediction capabilities of this model we still had very low Precision and Recall scores.  This leades us to believe that our data does not have relevant features to make this kind of predictions.  We need new features prehaps covering ground such as average age or gender of consumers, length of games, multiplayer capabilities, etc
