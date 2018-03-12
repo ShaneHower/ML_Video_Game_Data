@@ -73,12 +73,3 @@ Average precision-recall score: 0.14
 ```
 ![figure_1](https://user-images.githubusercontent.com/34482822/37305761-f0f693c8-260b-11e8-97b4-376e8aa8aac9.png)
 
-## Multi Label attempt
-Above was a single label multi class attempt (Genre was the label, the classes were the 12 different genre names).  I then tried a multi label binary class strategy as a final attempt to increase the accuracy of the prediction.  In order to do this I had to create a new column representing the name of each genre and assign a binary value (True or False) for each game.  Here is an example data set that will demonstrate how this works.  The original data frame will look like this:   
-
-
-![screen shot 2018-03-11 at 2 17 14 pm](https://user-images.githubusercontent.com/34482822/37256898-58f028fc-2537-11e8-9795-c86ae68c3589.png)
-
-After running the SQL script we'll end up with a data frame which looks like this:
-
-![screen shot 2018-03-11 at 2 19 02 pm](https://user-images.githubusercontent.com/34482822/37256901-70976b64-2537-11e8-820e-f2aca988e0c9.png)
