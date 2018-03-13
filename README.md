@@ -52,7 +52,7 @@ To try and increase the Precision/ Recall score for this prediction model I deci
 After running through the python script I would end up with a new data set:
 ![after name split](https://user-images.githubusercontent.com/34482822/37256629-d3abf0a2-2533-11e8-9b50-02443bef3c07.png)
 
-Our accuracy stayed at 92% for our selected features, however, there was not a Gini importance score higher than 0.01. As you could guess, this also created a tremendous amount of features (11,047).  These were a few of Gini importance scores.  The most important still being JP_Sales and Publisher_ID.
+Once this python script was applied to the data, I ran it through the model once more.  Our accuracy stayed at 92% for our selected features, however, there was not a Gini importance score higher than 0.01. As you could guess, this also created a tremendous amount of features (11,047).  These were a few of Gini importance scores.
 #### Highest Gini Importance 
 ```
 ('JP_Sales', 0.029354910983696695)
