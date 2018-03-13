@@ -53,23 +53,53 @@ After running through the python script I would end up with a new data set:
 ![after name split](https://user-images.githubusercontent.com/34482822/37256629-d3abf0a2-2533-11e8-9b50-02443bef3c07.png)
 
 Our accuracy stayed at 92% for our selected features, however, there was not a Gini importance score higher than 0.01. As you could guess, this also created a tremendous amount of features (11,047).  These were a few of Gini importance scores.  The most important still being JP_Sales and Publisher_ID.
+#### Highest Gini Importance 
 ```
 ('JP_Sales', 0.029354910983696695)
-('Other_Sales', 0.0096580896133686093)
+('Unnamed: 0', 0.018351900225702045)
+('publisher_ID', 0.017511158250049563)
 ('Global_Sales', 0.017380643803780377)
-('Critic_Score', 0.0093791033194381875)
+('year', 0.015155475873391094)
+('NA_Sales', 0.013747328445000276)
+('User_Count', 0.013643938172559019)
+('platform_ID', 0.012177256447408843)
+('EU_Sales', 0.012049350879789171)
 ('Critic_Count', 0.010917642625512645)
 ('User_Score', 0.01060711768162452)
-('User_Count', 0.013643938172559019)
-('publisher_ID', 0.017511158250049563)
-('platform_ID', 0.012177256447408843)
+('Other_Sales', 0.0096580896133686093)
+('Critic_Score', 0.0093791033194381875)
 ('Title_RPG', 0.0091095749319983418)
-('Name', 4.9212610831392626e-07)
-('Wii', 1.2394600815783068e-05)
-('Sports', 2.7979981601987282e-05)
-('Super', 0.00042687922637673319)
+('Dungeon', 0.0087256851922068012)
+('Fantasy', 0.008140674170992979)
+('Tales', 0.0056895931458593018)
+('Online', 0.0056726082607470776)
+('on', 0.0049626779158669426)
+('Dragon', 0.0046917916373075451)
 ```
 
+#### Lowest Gini Importance
+```
+('Slightly', 0.0)
+('Sugar', 0.0)
+('Spice!', 0.0)
+('Anoko', 0.0)
+('Suteki', 0.0)
+('Nanimokamo', 0.0)
+('Kanokon:', 0.0)
+('Esuii', 0.0)
+('Tsukigime', 0.0)
+("Ranko's", 0.0)
+('Shirayuki', 0.0)
+('Kajitsu:', 0.0)
+('Scarlett:', 0.0)
+('Nichijou', 0.0)
+('Kyoukaisen', 0.0)
+('Breach', 0.0)
+('3000', 0.0)
+('Nauts', 0.0)
+('Plushees', 0.0)
+('LMA', 0.0)
+```
 Our precision remained the same at 53%, but our recall had a significant decrease at 11%.  So this experiment did not really help our predictions.  Below is the Precision-Recall curve for this data set.
 
 ![figure_1](https://user-images.githubusercontent.com/34482822/37310459-56cd2cf8-261a-11e8-94b3-b1eb537e1dec.png)
