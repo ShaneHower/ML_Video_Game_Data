@@ -36,9 +36,16 @@ clf = RandomForestClassifier(n_estimators=10000, random_state=0, n_jobs= -1)
 #Train the classifier
 clf.fit(X_train,y_train)
 
+sorted_feature = []
 #Print the name and gini importance of each feature
 for feature in zip(feature_labels, clf.feature_importances_):
-    print(feature)
+    sorted_feature.append(feature)
+
+#sort features from high to low by the second element of the tuple
+sorted_feature = sorted(sorted_feature, key= lambda tup: tup[1], reverse= True)
+
+for i in sorted_feature:
+    print(i)
 
 #Select features that are over 0.12 in importance from clf
 sfm = SelectFromModel(clf, threshold= 0.12)
