@@ -18,21 +18,21 @@ SET name = SUBSTRING_INDEX(name,'(', 1);
 I needed two data sets.  The first data set gave a binary value to each row which indicated if a game was an RPG (1) or not (0).  This would be my y value, the value which will be the target array.  The second set was a set of selected features.  If these features were strings they were then converted into numerical ID's.  Columns were added to experiment with new features such as assigning a binary value to titles with names like "Quest", "Fantasy", or "Dragon". This feature would suggest that such a title would be an RPG.
 
 ## Feature Selection
-I used a Random Forest Classifier to determine the Gini Importance of each feature and then tested the prediction accuracy of the most important features.  The highest scored features were 'JP_Sales' and 'publisher_ID'.  
+I used a Random Forest Classifier to determine the Gini Importance of each feature and then tested the prediction accuracy of the most important features.  The highest scored features were 'publisher_ID'and 'JP_Sales'.  Here are the scores from highest to lowest. 
 ```
+('publisher_ID', 0.18022073942406219)
+('JP_Sales', 0.12845992481189905)
 ('year', 0.11848553171147959)
+('Global_Sales', 0.10741830360290834)
+('platform_ID', 0.071075695936882538)
+('User_Count', 0.066368160246393956)
 ('NA_Sales', 0.059255530505788398)
 ('EU_Sales', 0.049575393564702808)
-('JP_Sales', 0.12845992481189905)
-('Other_Sales', 0.03416596307311124)
-('Global_Sales', 0.10741830360290834)
-('Critic_Score', 0.047943435079066704)
 ('Critic_Count', 0.049539872228269673)
 ('User_Score', 0.048877610502863128)
-('User_Count', 0.066368160246393956)
-('publisher_ID', 0.18022073942406219)
-('platform_ID', 0.071075695936882538)
+('Critic_Score', 0.047943435079066704)
 ('Title_RPG', 0.038613839312572333)
+('Other_Sales', 0.03416596307311124)
 ```
 The full feature accuracy test and selected feature accuracy test resulted in a value of 92%.  That's pretty high! However, is our model actually good at predicting if an unknown game is an RPG.  The way we can test this is by looking at the precision and recall scores.  Precision is the percentage of true positives(predicted true and were actually true) out of the all predicted values (both true positives and false positives).  This answers the question "how many selected items are relevant?".  Recall, on the other hand, is the percentage of true positives out of all true values (false negatives-pred false but were true, and true positives).  This answers the question "how many relevant items were selected?".  SKlearn has a quick method of finding both of these.
 ```
