@@ -15,7 +15,7 @@ split_name = split_name.split()
 
 # check each title for the unique name and add it to the dataframe containing only number values.
 for i in split_name:
-    df2[i] = df1['Name'].str.contains(i, na = False)
+    df2[i] = df1['Name'].str.contains(i, na = False, case = False)
 
 #export to csv so we can use it in the feature selection script.
 df2.to_csv('Multi_label_python.csv')
