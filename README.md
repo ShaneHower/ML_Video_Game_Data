@@ -45,7 +45,7 @@ The reason precision and recall are better metrics to determine the usefulness o
 
 ![figure_1](https://user-images.githubusercontent.com/34482822/37307147-58aa713e-2610-11e8-90ab-89fd88181bdd.png)
 
-## Experimenting Precision/Recall
+## Experimenting
 To try and increase the Precision/ Recall score for this prediction model I decided to experiment and see if the names could help our prediction.  The way I approached this problem was to create a list of unique names and check if a title contained any of those names.  It would then create a new column and assign that entry 'True' if that word was in the title or 'False' otherwise.  so for instance, let's say I have this data set:  
 ![before name split](https://user-images.githubusercontent.com/34482822/37256623-bfc2b13e-2533-11e8-8206-c215156ed72c.png)
 
